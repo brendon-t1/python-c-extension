@@ -1,12 +1,12 @@
 from distutils.core import setup, Extension
 
-
 def main():
-    setup(name="extend",
+    setup(name="rps",
         version="1.0.0",
-        description="extend test",
+        description="rps test",
         author="Brendon",
-        ext_modules=[Extension("extend", ["extend.c"])])
+        ext_modules=[Extension("rps", ["rps.c"])])
 
 if __name__=="__main__":
     main()
+
