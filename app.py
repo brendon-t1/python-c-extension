@@ -7,24 +7,23 @@ from tkinter import *
 root = Tk()
 root.title("Python C Extension")
 
-def run():
+def run(choice):
     answer.delete(0, END)
-    num = int(choice_entry.get())
+    num = int(choice)
     result = rps.rps(num)
-    #result = rps.rps(1)
+    
 
     answer.insert(0, result)
 
 answer = Entry(root)
-answer.grid(row=0, column=0, columnspan=1)
+answer.grid(row=0, column=0, columnspan=3)
 
-choice_entry = Entry(root, width=20)
-choice_entry.grid(row=1, column=0,columnspan=1)
-choice_label = Label(root, text="Enter num here")
-choice_label.grid(row=2, column=0)
-
-button_run = Button(root, text="Run", command=run)
-button_run.grid(row=3, column=0, columnspan=1)
+rock = Button(root, text="Rock", command=lambda: run(0))
+rock.grid(row=1, column=0)
+paper = Button(root, text="Paper", command=lambda: run(1))
+paper.grid(row=1, column=1)
+scissors = Button(root, text="Scissors", command=lambda: run(2))
+scissors.grid(row=1, column=2)
 
 
 root.mainloop()
